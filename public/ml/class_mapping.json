@@ -1,0 +1,17 @@
+{
+  "0": "NORMAL",
+  "1": "LEAK",
+  "positive_class_id": 1,
+  "positive_definition": "At least one active leakage as defined by documented YAML start/end intervals",
+  "negative_definition": "No active documented leakage interval",
+  "not_supported": [
+    "SENSOR_FAULT",
+    "DEMAND_SPIKE",
+    "PUMP_FAULT",
+    "CYBERATTACK"
+  ],
+  "output_probability_order": [
+    0,
+    1
+  ]
+}

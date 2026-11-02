@@ -65,49 +65,43 @@ export default function Monitoring() {
             <div className="chart-caption">
               <span>
                 {tab === "pressure"
-                  ? "Tekanan observasi"
+                  ? "Tekanan sensor"
                   : tab === "flow"
-                    ? "Debit observasi"
+                    ? "Debit sensor"
                     : "Akumulasi kehilangan"}{" "}
                 <b>({unit})</b>
               </span>
-              <span>Jendela 240 sampel · waktu simulasi (s)</span>
+              <span>240 pembacaan / waktu (s)</span>
             </div>
             <ResponsiveContainer width="100%" height={125}>
               <AreaChart
                 data={history}
                 margin={{ top: 10, right: 12, bottom: 0, left: -25 }}
               >
-                <defs>
-                  <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#38bdf8" stopOpacity={0.22} />
-                    <stop offset="100%" stopColor="#38bdf8" stopOpacity={0} />
-                  </linearGradient>
-                </defs>
                 <CartesianGrid
                   vertical={false}
-                  stroke="#233749"
+                  stroke="#44453f"
                   strokeDasharray="3 5"
                 />
                 <XAxis
                   dataKey="time"
                   type="number"
                   domain={["dataMin", (d) => Math.max(10, d)]}
-                  tick={{ fill: "#6d8597", fontSize: 10 }}
+                  tick={{ fill: "#8e9087", fontSize: 10 }}
                   tickFormatter={(v) => Number(v).toFixed(0)}
                   axisLine={false}
                   tickLine={false}
                 />
                 <YAxis
-                  tick={{ fill: "#6d8597", fontSize: 10 }}
+                  tick={{ fill: "#8e9087", fontSize: 10 }}
                   axisLine={false}
                   tickLine={false}
                   domain={[0, "auto"]}
                 />
                 <Tooltip
                   contentStyle={{
-                    background: "#112338",
-                    border: "1px solid #233a50",
+                    background: "#343530",
+                    border: "1px solid #53554b",
                     fontSize: 11,
                   }}
                   labelFormatter={(v) => `${Number(v).toFixed(1)} s`}
@@ -120,9 +114,10 @@ export default function Monitoring() {
                   isAnimationActive={false}
                   dataKey={tab}
                   type="monotone"
-                  stroke="#38bdf8"
+                  stroke="#d5a66d"
                   strokeWidth={2}
-                  fill="url(#fill)"
+                  fill="#d5a66d"
+                  fillOpacity={0.06}
                 />
               </AreaChart>
             </ResponsiveContainer>

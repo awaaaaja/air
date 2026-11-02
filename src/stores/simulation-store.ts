@@ -40,7 +40,7 @@ export const useSimulation = create<State>((set, get) => ({
   parameters: parametersFor("normal"),
   sample: initial(),
   history: [initial()],
-  events: [{ id: 0, time: 0, text: "Jaringan siap · operasi normal" }],
+  events: [{ id: 0, time: 0, text: "Jaringan siap. Operasi normal." }],
   running: false,
   speed: 1,
   scenario: "normal",

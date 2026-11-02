@@ -50,7 +50,7 @@ export const scenarios: Record<
 > = {
   normal: {
     label: "Operasi Normal",
-    description: "Distribusi stabil · tanpa kebocoran",
+    description: "Distribusi stabil tanpa kebocoran",
     parameters: {},
   },
   small: {

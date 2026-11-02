@@ -38,8 +38,12 @@ Ketiga GLB asli disimpan di `public/models`; tidak dimodifikasi. Normalisasi bou
 
 ## Deployment Vercel
 
-Impor repository sebagai Next.js, gunakan `npm ci` dan `npm run build`. Tidak ada variabel rahasia yang dibutuhkan. `postinstall` menyalin runtime ONNX sesuai versi terkunci ke `public/onnx`; jangan hapus langkah ini bila menambahkan model. Publikasi aset memerlukan penyelesaian verifikasi lisensi pompa. Model ML belum disertakan, dan tidak ada prediksi atau probabilitas buatan. Baca ML_INTEGRATION.md sebelum mengaktifkan inferensi.
+Impor repository sebagai Next.js, gunakan `npm ci` dan `npm run build`. Tidak ada variabel rahasia yang dibutuhkan. `postinstall` menyalin runtime ONNX sesuai versi terkunci ke `public/onnx`; jangan hapus langkah ini bila menambahkan model. Publikasi aset memerlukan penyelesaian verifikasi lisensi pompa. Model ONNX BattLeDIM sudah disertakan. Buka pengujian model untuk inferensi WASM pada enam sampel asli atau unggahan JSON dengan 36 kanal. Prediksi terpisah dari jaringan 3D karena sensor simulator belum memenuhi kontrak L-Town. Baca ML_INTEGRATION.md untuk format data dan validasinya.
 
 ## Batasan
 
 Ini vertical slice edukasional, bukan EPANET atau perangkat operasi utilitas. Hanya satu kebocoran aktif; mengganti pipa kebocoran memindahkan sumber tersebut. Riwayat dalam memori dan hilang saat reload. Kontrol sidebar dan label HTML menyediakan alternatif pemilihan dengan keyboard. Tidak ada penyimpanan proyek, impor GIS, atau koneksi sensor fisik. Tidak memakai shadcn karena kontrol native sudah mencukupi.
+
+## Antarmuka
+
+Workspace mengikuti referensi Industrial IoT yang diberikan: abu-abu arang, aksen jingga, model 3D di tengah, gauge tekanan serta metrik di panel kanan. Lihat DESIGN_NOTES.md untuk referensi desain, perubahan dan status akses referensi Dribbble. Model dapat diuji melalui tombol **Buka pengujian model** pada panel kanan.

@@ -1,0 +1,96 @@
+{
+  "name": "LEAKSENSE AI",
+  "dataset": "BattLeDIM / L-Town",
+  "zenodo_record": "4017659",
+  "source_url": "https://zenodo.org/records/4017659",
+  "created_utc": "2026-11-02T17:13:50.149047Z",
+  "model": "LogisticRegression",
+  "feature_count": 254,
+  "training_records": 61289,
+  "time_samples_total": 210240,
+  "leak_event_count": 33,
+  "label_counts_full": {
+    "0": 2178,
+    "1": 208062
+  },
+  "timestamp_min": "2018-01-01 00:00:00",
+  "timestamp_max": "2019-12-31 23:55:00",
+  "feature_extractor": "extract_window(window_values, timestamp) as in Kaggle training notebook",
+  "onnx_validated_native_ort": true,
+  "onnx_web_wasm_smoke_test": "NOT RUN; must be checked in browser",
+  "onnx_graph_operator_domains": [
+    "ai.onnx.ml:Imputer",
+    "ai.onnx.ml:LinearClassifier",
+    "ai.onnx.ml:Scaler"
+  ],
+  "onnx_verification": {
+    "input": {
+      "name": "sensor_features",
+      "shape": [
+        null,
+        254
+      ],
+      "type": "tensor(float)"
+    },
+    "outputs": [
+      {
+        "name": "label",
+        "type": "tensor(int64)",
+        "shape": [
+          null
+        ]
+      },
+      {
+        "name": "probabilities",
+        "type": "tensor(float)",
+        "shape": [
+          null,
+          2
+        ]
+      }
+    ],
+    "label_output": "label",
+    "probability_output": "probabilities",
+    "max_abs_probability_diff": 7.134386358242928e-06,
+    "compared_rows": 512,
+    "operators": [
+      "ai.onnx.ml:Imputer",
+      "ai.onnx.ml:LinearClassifier",
+      "ai.onnx.ml:Scaler"
+    ]
+  },
+  "onnx_model_size_bytes": 6920,
+  "onnx_sha256": "916c441f9cb5651e6693039ad2657ccf17e9b0f8da168f133d7003c3538f76d9",
+  "python_versions": {
+    "python": "3.13.15",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "sklearn": "1.6.1",
+    "onnxruntime": "1.31.1",
+    "skl2onnx": "1.20.0"
+  },
+  "selection_rank": [
+    "LogisticRegression",
+    "RandomForest"
+  ],
+  "failed_candidate_exports": {},
+  "limitation_status": "EXPLORATORY_ONLY_NOT_INDEPENDENT_EVENT_VALIDATED",
+  "source_reconstruction": "Original simulated dataset sensor readings, not independently measured field network",
+  "class_labels": {
+    "0": "NORMAL",
+    "1": "LEAK",
+    "positive_class_id": 1,
+    "positive_definition": "At least one active leakage as defined by documented YAML start/end intervals",
+    "negative_definition": "No active documented leakage interval",
+    "not_supported": [
+      "SENSOR_FAULT",
+      "DEMAND_SPIKE",
+      "PUMP_FAULT",
+      "CYBERATTACK"
+    ],
+    "output_probability_order": [
+      0,
+      1
+    ]
+  }
+}

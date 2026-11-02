@@ -7,9 +7,9 @@ test("full simulator workflow", async ({ page }) => {
     page.getByRole("heading", { name: /Jaringan distribusi air/ }),
   ).toBeVisible();
   await expect(page.locator('canvas[data-ready="true"]')).toBeVisible();
-  await expect(page.locator(".scene-label")).toHaveCount(9);
+  await expect(page.locator(".scene-label")).toHaveCount(4);
   await expect(
-    page.getByText("Model ML belum tersedia", { exact: true }),
+    page.getByRole("button", { name: "Buka pengujian model", exact: true }),
   ).toBeVisible();
   await page.screenshot({ path: "test-results/desktop.png", fullPage: true });
   await page.locator(".component-item").filter({ hasText: "PIPE-02" }).click();
@@ -98,7 +98,7 @@ test("all scenario presets alter the model and assets are served", async ({
     expect((await response.body()).subarray(0, 4).toString()).toBe("glTF");
   }
   await page.goto("/");
-  const scenario = page.getByLabel("SKENARIO AKTIF");
+  const scenario = page.getByLabel("Skenario");
   await scenario.selectOption("small");
   await expect(page.getByRole("switch")).toBeChecked();
   await expect(
@@ -124,6 +124,6 @@ test("all scenario presets alter the model and assets are served", async ({
   await scenario.selectOption("sensor");
   await expect(page.locator(".metric-note").first()).toContainText("terganggu");
   await expect(
-    page.getByText("Model ML belum tersedia", { exact: true }),
+    page.getByRole("button", { name: "Buka pengujian model", exact: true }),
   ).toBeVisible();
 });

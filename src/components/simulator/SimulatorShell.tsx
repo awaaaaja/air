@@ -20,7 +20,6 @@ import {
   X,
   PanelLeft,
   ScanLine,
-  ShieldCheck,
 } from "lucide-react";
 import { motion } from "motion/react";
 import { useSimulation } from "@/stores/simulation-store";
@@ -30,7 +29,7 @@ import {
   type Scenario,
 } from "@/lib/simulation/engine";
 import Monitoring from "@/components/monitoring/Monitoring";
-import { detectModel } from "@/lib/ml/onnx-client";
+import MLWorkbench from "@/components/ml/MLWorkbench";
 const Scene = dynamic(() => import("@/components/scene/WaterNetworkScene"), {
   ssr: false,
   loading: () => <div className="scene-loading">Menyiapkan digital twin…</div>,
@@ -122,20 +121,10 @@ function Slider({
 export default function SimulatorShell() {
   const s = useSimulation();
   const [tools, setTools] = useState(false),
-    [hint, setHint] = useState(true),
-    [model, setModel] = useState("Model ML belum tersedia");
+    [hint, setHint] = useState(true);
   useEffect(() => {
     const id = setInterval(() => useSimulation.getState().tick(), 250);
     return () => clearInterval(id);
-  }, []);
-  useEffect(() => {
-    let active = true;
-    detectModel().then((status) => {
-      if (active) setModel(status.message);
-    });
-    return () => {
-      active = false;
-    };
   }, []);
   const pipe = s.selected.startsWith("PIPE");
   const leakHere =
@@ -151,13 +140,13 @@ export default function SimulatorShell() {
           </span>
           <span>
             LEAKSENSE <b>AI</b>
-            <small>WATER NETWORK DIGITAL TWIN</small>
+            <small>Simulasi jaringan air</small>
           </span>
         </Link>
         <div className="project-name">
           <span className="divider" />
           <span>
-            Jaringan Demonstrasi <small>Lingkungan simulasi / 01</small>
+            Proyek 01 <small>Jaringan distribusi</small>
           </span>
         </div>
         <div className="header-end">
@@ -167,7 +156,7 @@ export default function SimulatorShell() {
           </span>
           <span className="clock">
             {clock}
-            <small> WAKTU SIMULASI</small>
+            <small> waktu simulasi</small>
           </span>
           <button
             className="icon-button"
@@ -189,7 +178,7 @@ export default function SimulatorShell() {
       <div className="workspace">
         <aside className={`sidebar ${tools ? "is-open" : ""}`}>
           <div className="sidebar-title">
-            <SlidersHorizontal size={15} /> KONTROL SIMULASI
+            <SlidersHorizontal size={15} /> Pengaturan
             <button
               className="icon-button mobile-menu"
               onClick={() => setTools(false)}
@@ -200,7 +189,7 @@ export default function SimulatorShell() {
           </div>
           <section>
             <label className="eyebrow" htmlFor="scenario">
-              SKENARIO AKTIF
+              Skenario
             </label>
             <select
               id="scenario"
@@ -215,13 +204,11 @@ export default function SimulatorShell() {
             </select>
             <p className="muted small">{scenarios[s.scenario].description}</p>
             <div className="truth-label">
-              <ShieldCheck size={12} /> Skenario simulasi · ground truth
+              Kondisi yang diterapkan pada jaringan
             </div>
           </section>
           <section>
-            <div className="section-heading">
-              Parameter jaringan <span>LIVE</span>
-            </div>
+            <div className="section-heading">Operasi jaringan</div>
             <Slider
               label="Atur Pompa"
               value={s.parameters.pump}
@@ -246,7 +233,7 @@ export default function SimulatorShell() {
           </section>
           <section className="network-list">
             <div className="section-heading">
-              Struktur jaringan <small>09</small>
+              Komponen <small>9</small>
             </div>
             {components.map((id) => (
               <button
@@ -276,57 +263,27 @@ export default function SimulatorShell() {
           <div className="sidebar-footer">
             <Radio size={13} />
             <span>
-              Mesin hidraulika lokal<small>Tanpa koneksi perangkat fisik</small>
+              Perhitungan di browser
+              <small>Tidak terhubung ke sensor fisik</small>
             </span>
           </div>
         </aside>
         <div className="central">
           <div className="scene-toolbar">
             <div>
-              <span className="eyebrow">RUANG KERJA / DIGITAL TWIN</span>
-              <h1>
-                Jaringan distribusi air <span>01</span>
-              </h1>
+              <span className="eyebrow">Proyek 01 / Model jaringan</span>
+              <h1>Jaringan distribusi air</h1>
             </div>
             <span className="environment-badge">
-              <i /> SIMULASI LOKAL
+              <i /> Model 3D
             </span>
-          </div>
-          <div className="metrics">
-            <Metric
-              label="TEKANAN SENSOR"
-              value={fmt(s.sample.pressure)}
-              unit="bar"
-              icon={<Gauge size={17} />}
-              note={
-                s.parameters.sensorFault
-                  ? "Observasi sensor terganggu"
-                  : "PRESSURE-01"
-              }
-            />
-            <Metric
-              label="DEBIT SENSOR"
-              value={fmt(s.sample.flow)}
-              unit="L/min"
-              icon={<Activity size={17} />}
-              note="FLOW-01 · aliran masuk"
-            />
-            <Metric
-              label="KEHILANGAN AIR"
-              value={fmt(s.sample.loss)}
-              unit="L"
-              icon={<Droplets size={17} />}
-              note={`${fmt(s.sample.leakage)} L/min · kebocoran`}
-              alert={s.parameters.leak}
-            />
           </div>
           <div className="scene-wrap" data-testid="scene">
             <SceneBoundary>
               <Scene />
             </SceneBoundary>
             <div className="view-badge">
-              <Box size={13} /> PERSPEKTIF 3D <span>•</span> JARINGAN
-              DEMONSTRASI
+              <Box size={13} /> Tampilan 3D
             </div>
             <div className="camera-tools">
               <button
@@ -347,9 +304,7 @@ export default function SimulatorShell() {
             {hint && (
               <div className="hint">
                 <Info size={15} />
-                <span>
-                  Klik pipa → aktifkan kebocoran → amati perubahan debit.
-                </span>
+                <span>Pilih pipa untuk mengatur kebocoran.</span>
                 <button
                   aria-label="Tutup petunjuk"
                   onClick={() => setHint(false)}
@@ -370,7 +325,7 @@ export default function SimulatorShell() {
               </span>
             </div>
             <div className="orbit-hint">
-              Geser untuk orbit <span>·</span> Scroll untuk zoom
+              Geser untuk memutar. Gulir untuk zoom.
             </div>
           </div>
           <div className="playback">
@@ -391,14 +346,41 @@ export default function SimulatorShell() {
               </select>
             </div>
             <span className="playback-note">
-              <i /> Deterministik · Δt 0,25 s
+              <i /> Langkah waktu 0,25 detik
             </span>
           </div>
           <Monitoring />
         </div>
         <aside className="inspector">
           <div className="sidebar-title">
-            <ScanLine size={15} /> INSPEKTOR KOMPONEN
+            <ScanLine size={15} /> Detail komponen
+          </div>
+          <div className="metrics">
+            <Metric
+              label="Tekanan"
+              gauge={s.sample.pressure}
+              value={fmt(s.sample.pressure)}
+              unit="bar"
+              icon={<Gauge size={17} />}
+              note={
+                s.parameters.sensorFault ? "Sensor terganggu" : "PRESSURE-01"
+              }
+            />
+            <Metric
+              label="Debit masuk"
+              value={fmt(s.sample.flow)}
+              unit="L/min"
+              icon={<Activity size={17} />}
+              note="FLOW-01"
+            />
+            <Metric
+              label="Air terbuang"
+              value={fmt(s.sample.loss)}
+              unit="L"
+              icon={<Droplets size={17} />}
+              note={`${fmt(s.sample.leakage)} L/min bocor`}
+              alert={s.parameters.leak}
+            />
           </div>
           <motion.div
             key={s.selected}
@@ -411,7 +393,7 @@ export default function SimulatorShell() {
                 <Box size={28} />
               </div>
               <span className={`pill ${leakHere ? "warn" : ""}`}>
-                {leakHere ? "KEBOCORAN" : "TERPILIH"}
+                {leakHere ? "Bocor" : "Dipilih"}
               </span>
               <h2>{s.selected}</h2>
               <p>{names[s.selected]}</p>
@@ -473,8 +455,8 @@ export default function SimulatorShell() {
                   <div className="inspector-callout">
                     <Info size={15} />
                     <span>
-                      Ubah kondisi pipa dan amati respons tekanan serta debit
-                      jaringan.
+                      Kebocoran mengurangi tekanan dan debit yang sampai ke
+                      konsumen.
                     </span>
                   </div>
                 </>
@@ -532,30 +514,15 @@ export default function SimulatorShell() {
               </button>
             </div>
           </motion.div>
-          <div className="ml-panel">
-            <div className="ml-title">
-              <span className="ml-icon">AI</span>
-              <span>DIAGNOSIS MACHINE LEARNING</span>
-            </div>
-            <h3>{model}</h3>
-            <p>
-              Simulasi berjalan menggunakan model hidraulika sederhana. Prediksi
-              Machine Learning akan tersedia setelah model ONNX diintegrasikan.
-            </p>
-            <span className="model-status">
-              <i /> MENUNGGU MODEL ONNX
-            </span>
-          </div>
+          <MLWorkbench />
         </aside>
       </div>
       <footer className="app-footer">
         <span>
-          <i /> LEAKSENSE ENGINE v0.1
+          <i /> Leaksense / 0.2
         </span>
-        <span>
-          Model hidraulika sederhana · bukan analisis rekayasa tervalidasi
-        </span>
-        <span>SELURUH DATA DIPROSES DI BROWSER</span>
+        <span>Model hidraulika sederhana</span>
+        <span>Data tidak dikirim ke server</span>
       </footer>
     </main>
   );
@@ -567,6 +534,7 @@ function Metric({
   icon,
   note,
   alert = false,
+  gauge,
 }: {
   label: string;
   value: string;
@@ -574,13 +542,41 @@ function Metric({
   icon: ReactNode;
   note: string;
   alert?: boolean;
+  gauge?: number;
 }) {
   return (
-    <div className={`metric ${alert ? "alert" : ""}`}>
+    <div
+      className={`metric ${alert ? "alert" : ""} ${gauge !== undefined ? "pressure-metric" : ""}`}
+    >
       <div className="metric-label">
         {label}
         {icon}
       </div>
+      {gauge !== undefined && (
+        <svg
+          className="metric-gauge"
+          viewBox="0 0 120 90"
+          role="img"
+          aria-label="Skala tekanan 0 sampai 4 bar"
+        >
+          <path
+            d="M18 76 A49 49 0 1 1 102 76"
+            pathLength="100"
+            fill="none"
+            stroke="#4c4c47"
+            strokeWidth="5"
+          />
+          <path
+            d="M18 76 A49 49 0 1 1 102 76"
+            pathLength="100"
+            fill="none"
+            stroke="#e7a05b"
+            strokeWidth="5"
+            strokeDasharray={`${Math.max(0, Math.min(100, (gauge / 4) * 100))} 100`}
+            strokeLinecap="round"
+          />
+        </svg>
+      )}
       <div className="metric-value">
         {value}
         <span>{unit}</span>

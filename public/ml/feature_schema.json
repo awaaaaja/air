@@ -1,0 +1,2416 @@
+{
+  "version": "1.0",
+  "dataset": "BattLeDIM / L-Town Zenodo 4017659",
+  "onnx_input_name": "sensor_features",
+  "onnx_input_dtype": "float32",
+  "onnx_input_shape": [
+    "batch",
+    254
+  ],
+  "feature_count": 254,
+  "feature_order": [
+    "pressure__n1__current",
+    "pressure__n1__mean",
+    "pressure__n1__min",
+    "pressure__n1__max",
+    "pressure__n1__std_pop",
+    "pressure__n1__delta_5min",
+    "pressure__n1__trend_55min",
+    "pressure__n4__current",
+    "pressure__n4__mean",
+    "pressure__n4__min",
+    "pressure__n4__max",
+    "pressure__n4__std_pop",
+    "pressure__n4__delta_5min",
+    "pressure__n4__trend_55min",
+    "pressure__n31__current",
+    "pressure__n31__mean",
+    "pressure__n31__min",
+    "pressure__n31__max",
+    "pressure__n31__std_pop",
+    "pressure__n31__delta_5min",
+    "pressure__n31__trend_55min",
+    "pressure__n54__current",
+    "pressure__n54__mean",
+    "pressure__n54__min",
+    "pressure__n54__max",
+    "pressure__n54__std_pop",
+    "pressure__n54__delta_5min",
+    "pressure__n54__trend_55min",
+    "pressure__n105__current",
+    "pressure__n105__mean",
+    "pressure__n105__min",
+    "pressure__n105__max",
+    "pressure__n105__std_pop",
+    "pressure__n105__delta_5min",
+    "pressure__n105__trend_55min",
+    "pressure__n114__current",
+    "pressure__n114__mean",
+    "pressure__n114__min",
+    "pressure__n114__max",
+    "pressure__n114__std_pop",
+    "pressure__n114__delta_5min",
+    "pressure__n114__trend_55min",
+    "pressure__n163__current",
+    "pressure__n163__mean",
+    "pressure__n163__min",
+    "pressure__n163__max",
+    "pressure__n163__std_pop",
+    "pressure__n163__delta_5min",
+    "pressure__n163__trend_55min",
+    "pressure__n188__current",
+    "pressure__n188__mean",
+    "pressure__n188__min",
+    "pressure__n188__max",
+    "pressure__n188__std_pop",
+    "pressure__n188__delta_5min",
+    "pressure__n188__trend_55min",
+    "pressure__n215__current",
+    "pressure__n215__mean",
+    "pressure__n215__min",
+    "pressure__n215__max",
+    "pressure__n215__std_pop",
+    "pressure__n215__delta_5min",
+    "pressure__n215__trend_55min",
+    "pressure__n229__current",
+    "pressure__n229__mean",
+    "pressure__n229__min",
+    "pressure__n229__max",
+    "pressure__n229__std_pop",
+    "pressure__n229__delta_5min",
+    "pressure__n229__trend_55min",
+    "pressure__n288__current",
+    "pressure__n288__mean",
+    "pressure__n288__min",
+    "pressure__n288__max",
+    "pressure__n288__std_pop",
+    "pressure__n288__delta_5min",
+    "pressure__n288__trend_55min",
+    "pressure__n296__current",
+    "pressure__n296__mean",
+    "pressure__n296__min",
+    "pressure__n296__max",
+    "pressure__n296__std_pop",
+    "pressure__n296__delta_5min",
+    "pressure__n296__trend_55min",
+    "pressure__n332__current",
+    "pressure__n332__mean",
+    "pressure__n332__min",
+    "pressure__n332__max",
+    "pressure__n332__std_pop",
+    "pressure__n332__delta_5min",
+    "pressure__n332__trend_55min",
+    "pressure__n342__current",
+    "pressure__n342__mean",
+    "pressure__n342__min",
+    "pressure__n342__max",
+    "pressure__n342__std_pop",
+    "pressure__n342__delta_5min",
+    "pressure__n342__trend_55min",
+    "pressure__n410__current",
+    "pressure__n410__mean",
+    "pressure__n410__min",
+    "pressure__n410__max",
+    "pressure__n410__std_pop",
+    "pressure__n410__delta_5min",
+    "pressure__n410__trend_55min",
+    "pressure__n415__current",
+    "pressure__n415__mean",
+    "pressure__n415__min",
+    "pressure__n415__max",
+    "pressure__n415__std_pop",
+    "pressure__n415__delta_5min",
+    "pressure__n415__trend_55min",
+    "pressure__n429__current",
+    "pressure__n429__mean",
+    "pressure__n429__min",
+    "pressure__n429__max",
+    "pressure__n429__std_pop",
+    "pressure__n429__delta_5min",
+    "pressure__n429__trend_55min",
+    "pressure__n458__current",
+    "pressure__n458__mean",
+    "pressure__n458__min",
+    "pressure__n458__max",
+    "pressure__n458__std_pop",
+    "pressure__n458__delta_5min",
+    "pressure__n458__trend_55min",
+    "pressure__n469__current",
+    "pressure__n469__mean",
+    "pressure__n469__min",
+    "pressure__n469__max",
+    "pressure__n469__std_pop",
+    "pressure__n469__delta_5min",
+    "pressure__n469__trend_55min",
+    "pressure__n495__current",
+    "pressure__n495__mean",
+    "pressure__n495__min",
+    "pressure__n495__max",
+    "pressure__n495__std_pop",
+    "pressure__n495__delta_5min",
+    "pressure__n495__trend_55min",
+    "pressure__n506__current",
+    "pressure__n506__mean",
+    "pressure__n506__min",
+    "pressure__n506__max",
+    "pressure__n506__std_pop",
+    "pressure__n506__delta_5min",
+    "pressure__n506__trend_55min",
+    "pressure__n516__current",
+    "pressure__n516__mean",
+    "pressure__n516__min",
+    "pressure__n516__max",
+    "pressure__n516__std_pop",
+    "pressure__n516__delta_5min",
+    "pressure__n516__trend_55min",
+    "pressure__n519__current",
+    "pressure__n519__mean",
+    "pressure__n519__min",
+    "pressure__n519__max",
+    "pressure__n519__std_pop",
+    "pressure__n519__delta_5min",
+    "pressure__n519__trend_55min",
+    "pressure__n549__current",
+    "pressure__n549__mean",
+    "pressure__n549__min",
+    "pressure__n549__max",
+    "pressure__n549__std_pop",
+    "pressure__n549__delta_5min",
+    "pressure__n549__trend_55min",
+    "pressure__n613__current",
+    "pressure__n613__mean",
+    "pressure__n613__min",
+    "pressure__n613__max",
+    "pressure__n613__std_pop",
+    "pressure__n613__delta_5min",
+    "pressure__n613__trend_55min",
+    "pressure__n636__current",
+    "pressure__n636__mean",
+    "pressure__n636__min",
+    "pressure__n636__max",
+    "pressure__n636__std_pop",
+    "pressure__n636__delta_5min",
+    "pressure__n636__trend_55min",
+    "pressure__n644__current",
+    "pressure__n644__mean",
+    "pressure__n644__min",
+    "pressure__n644__max",
+    "pressure__n644__std_pop",
+    "pressure__n644__delta_5min",
+    "pressure__n644__trend_55min",
+    "pressure__n679__current",
+    "pressure__n679__mean",
+    "pressure__n679__min",
+    "pressure__n679__max",
+    "pressure__n679__std_pop",
+    "pressure__n679__delta_5min",
+    "pressure__n679__trend_55min",
+    "pressure__n722__current",
+    "pressure__n722__mean",
+    "pressure__n722__min",
+    "pressure__n722__max",
+    "pressure__n722__std_pop",
+    "pressure__n722__delta_5min",
+    "pressure__n722__trend_55min",
+    "pressure__n726__current",
+    "pressure__n726__mean",
+    "pressure__n726__min",
+    "pressure__n726__max",
+    "pressure__n726__std_pop",
+    "pressure__n726__delta_5min",
+    "pressure__n726__trend_55min",
+    "pressure__n740__current",
+    "pressure__n740__mean",
+    "pressure__n740__min",
+    "pressure__n740__max",
+    "pressure__n740__std_pop",
+    "pressure__n740__delta_5min",
+    "pressure__n740__trend_55min",
+    "pressure__n752__current",
+    "pressure__n752__mean",
+    "pressure__n752__min",
+    "pressure__n752__max",
+    "pressure__n752__std_pop",
+    "pressure__n752__delta_5min",
+    "pressure__n752__trend_55min",
+    "pressure__n769__current",
+    "pressure__n769__mean",
+    "pressure__n769__min",
+    "pressure__n769__max",
+    "pressure__n769__std_pop",
+    "pressure__n769__delta_5min",
+    "pressure__n769__trend_55min",
+    "flow__PUMP_1__current",
+    "flow__PUMP_1__mean",
+    "flow__PUMP_1__min",
+    "flow__PUMP_1__max",
+    "flow__PUMP_1__std_pop",
+    "flow__PUMP_1__delta_5min",
+    "flow__PUMP_1__trend_55min",
+    "flow__p227__current",
+    "flow__p227__mean",
+    "flow__p227__min",
+    "flow__p227__max",
+    "flow__p227__std_pop",
+    "flow__p227__delta_5min",
+    "flow__p227__trend_55min",
+    "flow__p235__current",
+    "flow__p235__mean",
+    "flow__p235__min",
+    "flow__p235__max",
+    "flow__p235__std_pop",
+    "flow__p235__delta_5min",
+    "flow__p235__trend_55min",
+    "time_sin",
+    "time_cos"
+  ],
+  "features": [
+    {
+      "name": "pressure__n1__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n1",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n1__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n1",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n1__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n1",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n1__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n1",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n1__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n1",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n1__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n1",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n1__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n1",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n4__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n4",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n4__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n4",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n4__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n4",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n4__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n4",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n4__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n4",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n4__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n4",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n4__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n4",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n31__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n31",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n31__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n31",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n31__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n31",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n31__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n31",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n31__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n31",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n31__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n31",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n31__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n31",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n54__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n54",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n54__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n54",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n54__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n54",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n54__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n54",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n54__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n54",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n54__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n54",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n54__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n54",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n105__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n105",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n105__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n105",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n105__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n105",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n105__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n105",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n105__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n105",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n105__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n105",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n105__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n105",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n114__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n114",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n114__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n114",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n114__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n114",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n114__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n114",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n114__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n114",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n114__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n114",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n114__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n114",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n163__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n163",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n163__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n163",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n163__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n163",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n163__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n163",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n163__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n163",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n163__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n163",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n163__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n163",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n188__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n188",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n188__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n188",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n188__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n188",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n188__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n188",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n188__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n188",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n188__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n188",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n188__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n188",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n215__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n215",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n215__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n215",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n215__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n215",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n215__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n215",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n215__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n215",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n215__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n215",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n215__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n215",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n229__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n229",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n229__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n229",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n229__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n229",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n229__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n229",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n229__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n229",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n229__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n229",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n229__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n229",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n288__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n288",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n288__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n288",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n288__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n288",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n288__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n288",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n288__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n288",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n288__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n288",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n288__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n288",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n296__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n296",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n296__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n296",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n296__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n296",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n296__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n296",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n296__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n296",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n296__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n296",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n296__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n296",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n332__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n332",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n332__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n332",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n332__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n332",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n332__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n332",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n332__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n332",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n332__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n332",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n332__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n332",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n342__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n342",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n342__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n342",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n342__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n342",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n342__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n342",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n342__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n342",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n342__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n342",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n342__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n342",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n410__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n410",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n410__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n410",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n410__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n410",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n410__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n410",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n410__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n410",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n410__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n410",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n410__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n410",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n415__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n415",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n415__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n415",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n415__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n415",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n415__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n415",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n415__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n415",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n415__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n415",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n415__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n415",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n429__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n429",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n429__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n429",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n429__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n429",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n429__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n429",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n429__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n429",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n429__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n429",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n429__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n429",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n458__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n458",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n458__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n458",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n458__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n458",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n458__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n458",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n458__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n458",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n458__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n458",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n458__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n458",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n469__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n469",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n469__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n469",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n469__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n469",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n469__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n469",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n469__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n469",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n469__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n469",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n469__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n469",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n495__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n495",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n495__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n495",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n495__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n495",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n495__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n495",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n495__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n495",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n495__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n495",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n495__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n495",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n506__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n506",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n506__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n506",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n506__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n506",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n506__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n506",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n506__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n506",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n506__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n506",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n506__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n506",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n516__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n516",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n516__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n516",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n516__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n516",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n516__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n516",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n516__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n516",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n516__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n516",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n516__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n516",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n519__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n519",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n519__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n519",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n519__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n519",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n519__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n519",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n519__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n519",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n519__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n519",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n519__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n519",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n549__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n549",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n549__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n549",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n549__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n549",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n549__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n549",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n549__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n549",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n549__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n549",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n549__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n549",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n613__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n613",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n613__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n613",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n613__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n613",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n613__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n613",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n613__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n613",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n613__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n613",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n613__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n613",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n636__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n636",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n636__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n636",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n636__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n636",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n636__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n636",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n636__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n636",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n636__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n636",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n636__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n636",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n644__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n644",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n644__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n644",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n644__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n644",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n644__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n644",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n644__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n644",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n644__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n644",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n644__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n644",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n679__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n679",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n679__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n679",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n679__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n679",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n679__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n679",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n679__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n679",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n679__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n679",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n679__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n679",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n722__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n722",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n722__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n722",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n722__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n722",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n722__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n722",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n722__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n722",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n722__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n722",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n722__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n722",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n726__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n726",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n726__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n726",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n726__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n726",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n726__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n726",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n726__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n726",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n726__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n726",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n726__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n726",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n740__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n740",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n740__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n740",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n740__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n740",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n740__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n740",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n740__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n740",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n740__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n740",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n740__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n740",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n752__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n752",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n752__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n752",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n752__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n752",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n752__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n752",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n752__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n752",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n752__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n752",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n752__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n752",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "pressure__n769__current",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n769",
+      "source_type": "pressure",
+      "operation": "current"
+    },
+    {
+      "name": "pressure__n769__mean",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n769",
+      "source_type": "pressure",
+      "operation": "mean"
+    },
+    {
+      "name": "pressure__n769__min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n769",
+      "source_type": "pressure",
+      "operation": "min"
+    },
+    {
+      "name": "pressure__n769__max",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n769",
+      "source_type": "pressure",
+      "operation": "max"
+    },
+    {
+      "name": "pressure__n769__std_pop",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n769",
+      "source_type": "pressure",
+      "operation": "std_pop"
+    },
+    {
+      "name": "pressure__n769__delta_5min",
+      "dtype": "float32",
+      "unit": "m water head",
+      "source_sensor_id": "n769",
+      "source_type": "pressure",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "pressure__n769__trend_55min",
+      "dtype": "float32",
+      "unit": "m water head per 5-min index",
+      "source_sensor_id": "n769",
+      "source_type": "pressure",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "flow__PUMP_1__current",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "PUMP_1",
+      "source_type": "flow",
+      "operation": "current"
+    },
+    {
+      "name": "flow__PUMP_1__mean",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "PUMP_1",
+      "source_type": "flow",
+      "operation": "mean"
+    },
+    {
+      "name": "flow__PUMP_1__min",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "PUMP_1",
+      "source_type": "flow",
+      "operation": "min"
+    },
+    {
+      "name": "flow__PUMP_1__max",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "PUMP_1",
+      "source_type": "flow",
+      "operation": "max"
+    },
+    {
+      "name": "flow__PUMP_1__std_pop",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "PUMP_1",
+      "source_type": "flow",
+      "operation": "std_pop"
+    },
+    {
+      "name": "flow__PUMP_1__delta_5min",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "PUMP_1",
+      "source_type": "flow",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "flow__PUMP_1__trend_55min",
+      "dtype": "float32",
+      "unit": "m^3/h per 5-min index",
+      "source_sensor_id": "PUMP_1",
+      "source_type": "flow",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "flow__p227__current",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "p227",
+      "source_type": "flow",
+      "operation": "current"
+    },
+    {
+      "name": "flow__p227__mean",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "p227",
+      "source_type": "flow",
+      "operation": "mean"
+    },
+    {
+      "name": "flow__p227__min",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "p227",
+      "source_type": "flow",
+      "operation": "min"
+    },
+    {
+      "name": "flow__p227__max",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "p227",
+      "source_type": "flow",
+      "operation": "max"
+    },
+    {
+      "name": "flow__p227__std_pop",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "p227",
+      "source_type": "flow",
+      "operation": "std_pop"
+    },
+    {
+      "name": "flow__p227__delta_5min",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "p227",
+      "source_type": "flow",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "flow__p227__trend_55min",
+      "dtype": "float32",
+      "unit": "m^3/h per 5-min index",
+      "source_sensor_id": "p227",
+      "source_type": "flow",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "flow__p235__current",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "p235",
+      "source_type": "flow",
+      "operation": "current"
+    },
+    {
+      "name": "flow__p235__mean",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "p235",
+      "source_type": "flow",
+      "operation": "mean"
+    },
+    {
+      "name": "flow__p235__min",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "p235",
+      "source_type": "flow",
+      "operation": "min"
+    },
+    {
+      "name": "flow__p235__max",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "p235",
+      "source_type": "flow",
+      "operation": "max"
+    },
+    {
+      "name": "flow__p235__std_pop",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "p235",
+      "source_type": "flow",
+      "operation": "std_pop"
+    },
+    {
+      "name": "flow__p235__delta_5min",
+      "dtype": "float32",
+      "unit": "m^3/h",
+      "source_sensor_id": "p235",
+      "source_type": "flow",
+      "operation": "delta_5min"
+    },
+    {
+      "name": "flow__p235__trend_55min",
+      "dtype": "float32",
+      "unit": "m^3/h per 5-min index",
+      "source_sensor_id": "p235",
+      "source_type": "flow",
+      "operation": "trend_55min"
+    },
+    {
+      "name": "time_sin",
+      "dtype": "float32",
+      "unit": "dimensionless",
+      "operation": "sin(2\u03c0 local_minute/1440)"
+    },
+    {
+      "name": "time_cos",
+      "dtype": "float32",
+      "unit": "dimensionless",
+      "operation": "cos(2\u03c0 local_minute/1440)"
+    }
+  ],
+  "raw_sensor_order": [
+    "pressure__n1",
+    "pressure__n4",
+    "pressure__n31",
+    "pressure__n54",
+    "pressure__n105",
+    "pressure__n114",
+    "pressure__n163",
+    "pressure__n188",
+    "pressure__n215",
+    "pressure__n229",
+    "pressure__n288",
+    "pressure__n296",
+    "pressure__n332",
+    "pressure__n342",
+    "pressure__n410",
+    "pressure__n415",
+    "pressure__n429",
+    "pressure__n458",
+    "pressure__n469",
+    "pressure__n495",
+    "pressure__n506",
+    "pressure__n516",
+    "pressure__n519",
+    "pressure__n549",
+    "pressure__n613",
+    "pressure__n636",
+    "pressure__n644",
+    "pressure__n679",
+    "pressure__n722",
+    "pressure__n726",
+    "pressure__n740",
+    "pressure__n752",
+    "pressure__n769",
+    "flow__PUMP_1",
+    "flow__p227",
+    "flow__p235"
+  ],
+  "pressure_sensor_ids": [
+    "n1",
+    "n4",
+    "n31",
+    "n54",
+    "n105",
+    "n114",
+    "n163",
+    "n188",
+    "n215",
+    "n229",
+    "n288",
+    "n296",
+    "n332",
+    "n342",
+    "n410",
+    "n415",
+    "n429",
+    "n458",
+    "n469",
+    "n495",
+    "n506",
+    "n516",
+    "n519",
+    "n549",
+    "n613",
+    "n636",
+    "n644",
+    "n679",
+    "n722",
+    "n726",
+    "n740",
+    "n752",
+    "n769"
+  ],
+  "flow_sensor_ids": [
+    "PUMP_1",
+    "p227",
+    "p235"
+  ],
+  "window_size_samples": 12,
+  "window_duration_minutes": 60,
+  "sampling_interval_minutes": 5,
+  "window_order": "oldest_to_newest",
+  "timestamp_alignment": "exact 5-minute interval, current timestamp is final row",
+  "raw_units": {
+    "pressure": "m of pressure head",
+    "flow": "m^3/hour"
+  },
+  "time_encoding": {
+    "formula": "sin/cos(2*pi*(hour*60+minute)/1440)",
+    "timezone": "Dataset timestamps naive/local; simulation must use the same local clock convention"
+  },
+  "raw_missing_value_handling": {
+    "offline": "forward_fill only up to 2 consecutive 5-minute rows; no backward fill",
+    "browser": "keep last known value up to 2 missing 5-minute ticks, otherwise refuse inference",
+    "window_validation": "12 consecutive timestamps, all 36 channels finite after bounded causal forward-fill"
+  },
+  "preprocessing": {
+    "window_stats": "mean/min/max, population std ddof=0; delta=last-previous; trend=(last-first)/11",
+    "scaler": "Saved in ONNX graph if chosen model uses StandardScaler",
+    "imputer": "Saved in ONNX graph; browser must reject absent/missing raw windows before feature calculation",
+    "additional_browser_normalization": "NONE; do not scale twice"
+  },
+  "output_labels": {
+    "0": "NORMAL",
+    "1": "LEAK"
+  },
+  "probability_column_order": [
+    0,
+    1
+  ],
+  "onnx_outputs": {
+    "label": "label",
+    "probabilities": "probabilities"
+  },
+  "probability_decision_threshold": 0.5,
+  "validation_tolerance": {
+    "absolute": 0.001,
+    "relative": 0.0001
+  }
+}

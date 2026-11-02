@@ -61,43 +61,47 @@ function Equipment({
         >
           <ringGeometry args={[0.65, 0.7, 48]} />
           <meshBasicMaterial
-            color={selected ? "#38bdf8" : "#91a7b8"}
+            color={selected ? "#3f8185" : "#737a6d"}
             transparent
             opacity={0.85}
           />
         </mesh>
       )}
-      <Html
-        position={[0, labelOffset, 0]}
-        center
-        distanceFactor={19}
-        zIndexRange={[10, 0]}
-      >
-        <button
-          className={`scene-label ${selected ? "selected" : ""}`}
-          onClick={() => select(id)}
+      {(selected ||
+        hover ||
+        ["TANK-01", "PUMP-01", "NODE-01"].includes(id)) && (
+        <Html
+          position={[0, labelOffset, 0]}
+          center
+          distanceFactor={10}
+          zIndexRange={[10, 0]}
         >
-          {id}
-          <span>
-            {id.startsWith("PIPE")
-              ? "Distribusi"
-              : id === "TANK-01"
-                ? "Reservoir"
-                : id === "PUMP-01"
-                  ? "Pompa sentrifugal"
-                  : id === "VALVE-01"
-                    ? "Katup kontrol"
-                    : "Titik jaringan"}
-          </span>
-        </button>
-      </Html>
+          <button
+            className={`scene-label ${selected ? "selected" : ""}`}
+            onClick={() => select(id)}
+          >
+            {id}
+            <span>
+              {id.startsWith("PIPE")
+                ? "Distribusi"
+                : id === "TANK-01"
+                  ? "Reservoir"
+                  : id === "PUMP-01"
+                    ? "Pompa sentrifugal"
+                    : id === "VALVE-01"
+                      ? "Katup kontrol"
+                      : "Titik jaringan"}
+            </span>
+          </button>
+        </Html>
+      )}
     </group>
   );
 }
 function Tube({
   from,
   to,
-  color = "#42647b",
+  color = "#777e75",
   radius = 0.13,
 }: {
   from: [number, number, number];
@@ -171,7 +175,7 @@ function Effects() {
         frustumCulled={false}
       >
         <sphereGeometry args={[1, 6, 6]} />
-        <meshBasicMaterial color="#69dcff" />
+        <meshBasicMaterial color="#95bec2" />
       </instancedMesh>
       <instancedMesh
         ref={leak}
@@ -179,7 +183,7 @@ function Effects() {
         frustumCulled={false}
       >
         <sphereGeometry args={[1, 6, 6]} />
-        <meshBasicMaterial color="#62dfff" />
+        <meshBasicMaterial color="#95bec2" />
       </instancedMesh>
     </>
   );
@@ -196,7 +200,7 @@ function Camera() {
     transitioning.current = true;
     goal.current.set(1, 0, 0);
     view.current.set(
-      ...((size.width < 600 ? [17, 16, 24] : [12, 11, 15]) as [
+      ...((size.width < 600 ? [17, 16, 24] : [11, 9, 14]) as [
         number,
         number,
         number,
@@ -241,21 +245,21 @@ function Network() {
   const reading = useSimulation((s) => s.sample);
   return (
     <>
-      <ambientLight intensity={1.6} />
-      <hemisphereLight args={["#d3edff", "#304456", 2]} />
-      <directionalLight position={[3, 10, 4]} intensity={3} />
-      <directionalLight position={[-4, 5, -5]} color="#79bcff" intensity={2} />
+      <ambientLight intensity={1.1} />
+      <hemisphereLight args={["#ffffff", "#939788", 1.4]} />
+      <directionalLight position={[3, 10, 4]} intensity={2} />
+      <directionalLight position={[-4, 5, -5]} color="#fff4df" intensity={2} />
       <mesh position={[0.6, -0.17, 0]}>
         <boxGeometry args={[16, 0.3, 7]} />
-        <meshStandardMaterial color="#132b3b" roughness={0.8} />
+        <meshStandardMaterial color="#41423d" roughness={0.8} />
       </mesh>
       <Grid
         position={[0.6, -0.008, 0]}
         args={[16, 7]}
         cellSize={0.5}
         sectionSize={2}
-        cellColor="#244358"
-        sectionColor="#355569"
+        cellColor="#494b43"
+        sectionColor="#56584e"
         fadeDistance={35}
         infiniteGrid={false}
       />
@@ -268,7 +272,7 @@ function Network() {
         <AssetModel name="pump" size={1.8} rotation={Math.PI / 2} />
         <mesh position={[0, 0.1, 0]}>
           <boxGeometry args={[1.4, 0.2, 1.5]} />
-          <meshStandardMaterial color="#34546b" />
+          <meshStandardMaterial color="#92978b" />
         </mesh>
         <mesh position={[0, 1.1, 0]}>
           <sphereGeometry args={[0.07, 12, 12]} />
@@ -299,7 +303,7 @@ function Network() {
           )}
           <mesh position={[0, -0.4, 0]}>
             <boxGeometry args={[0.28, 0.5, 0.55]} />
-            <meshStandardMaterial color="#2d4555" />
+            <meshStandardMaterial color="#989c91" />
           </mesh>
         </Equipment>
       ))}
@@ -344,7 +348,7 @@ function Network() {
       <Equipment id="NODE-01">
         <mesh>
           <cylinderGeometry args={[0.27, 0.27, 1.1, 16]} />
-          <meshStandardMaterial color="#5c7c8a" />
+          <meshStandardMaterial color="#949e90" />
         </mesh>
       </Equipment>
       {p.leak && reading.leakage > 0 && (
@@ -356,14 +360,14 @@ function Network() {
               [0, 0.4, 1],
               [0, -0.6, 1.5],
             ]}
-            color="#60d5ff"
+            color="#8cb2b8"
             lineWidth={p.severity > 50 ? 3 : 1}
             transparent
             opacity={0.7}
           />
           <mesh position={[0, -0.63, 1.5]} rotation={[-Math.PI / 2, 0, 0]}>
             <ringGeometry args={[0.18, 0.28 + p.severity / 300, 32]} />
-            <meshBasicMaterial color="#38bdf8" transparent opacity={0.45} />
+            <meshBasicMaterial color="#3f8185" transparent opacity={0.45} />
           </mesh>
           <Html
             position={[0, -0.1, 2]}
@@ -371,7 +375,7 @@ function Network() {
             distanceFactor={15}
             zIndexRange={[9, 0]}
           >
-            <span className="leak-label">KEBOCORAN · {p.severity}%</span>
+            <span className="leak-label">Bocor {p.severity}%</span>
           </Html>
         </group>
       )}
@@ -385,7 +389,7 @@ export default function WaterNetworkScene() {
   return (
     <>
       <Canvas
-        camera={{ position: [12, 11, 15], fov: 40 }}
+        camera={{ position: [11, 9, 14], fov: 40 }}
         dpr={[1, 1.5]}
         gl={{ antialias: true, powerPreference: "high-performance" }}
         onCreated={({ gl }) => {
@@ -396,8 +400,8 @@ export default function WaterNetworkScene() {
           gl.domElement.dataset.ready = "true";
         }}
       >
-        <color attach="background" args={["#091724"]} />
-        <fog attach="fog" args={["#091724", 25, 65]} />
+        <color attach="background" args={["#292a28"]} />
+        <fog attach="fog" args={["#292a28", 25, 65]} />
         <Suspense fallback={null}>
           <Network />
         </Suspense>
