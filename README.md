@@ -47,3 +47,5 @@ Ini vertical slice edukasional, bukan EPANET atau perangkat operasi utilitas. Ha
 ## Antarmuka
 
 Workspace mengikuti referensi Industrial IoT yang diberikan: abu-abu arang, aksen jingga, model 3D di tengah, gauge tekanan serta metrik di panel kanan. Lihat DESIGN_NOTES.md untuk referensi desain, perubahan dan status akses referensi Dribbble. Model dapat diuji melalui tombol **Buka pengujian model** pada panel kanan.
+
+Font antarmuka memakai Geist Sans yang disajikan lokal. Komponen memakai nama yang mudah dipahami, seperti Tangki utama, Pompa air, dan Pipa utama. Kode komponen tetap dapat dibuka melalui **Informasi teknis**.

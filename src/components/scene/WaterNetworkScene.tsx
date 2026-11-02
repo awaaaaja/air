@@ -12,6 +12,7 @@ import { Vector3, InstancedMesh, Object3D, Group } from "three";
 import type { OrbitControls as Controls } from "three-stdlib";
 import { useSimulation } from "@/stores/simulation-store";
 import type { ComponentId } from "@/lib/simulation/engine";
+import { componentInfo } from "@/lib/ui/components";
 import AssetModel from "./AssetModel";
 export const positions: Record<ComponentId, [number, number, number]> = {
   "TANK-01": [-5, 0, -1.5],
@@ -80,18 +81,7 @@ function Equipment({
             className={`scene-label ${selected ? "selected" : ""}`}
             onClick={() => select(id)}
           >
-            {id}
-            <span>
-              {id.startsWith("PIPE")
-                ? "Distribusi"
-                : id === "TANK-01"
-                  ? "Reservoir"
-                  : id === "PUMP-01"
-                    ? "Pompa sentrifugal"
-                    : id === "VALVE-01"
-                      ? "Katup kontrol"
-                      : "Titik jaringan"}
-            </span>
+            {componentInfo[id].name}
           </button>
         </Html>
       )}

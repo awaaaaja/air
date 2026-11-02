@@ -1,7 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { Component, useEffect, useState, type ReactNode } from "react";
+import { Component, useEffect, useState, useId, type ReactNode } from "react";
 import {
   Activity,
   Droplets,
@@ -22,6 +22,7 @@ import {
   ScanLine,
 } from "lucide-react";
 import { motion } from "motion/react";
+import { componentInfo } from "@/lib/ui/components";
 import { useSimulation } from "@/stores/simulation-store";
 import {
   scenarios,
@@ -32,7 +33,7 @@ import Monitoring from "@/components/monitoring/Monitoring";
 import MLWorkbench from "@/components/ml/MLWorkbench";
 const Scene = dynamic(() => import("@/components/scene/WaterNetworkScene"), {
   ssr: false,
-  loading: () => <div className="scene-loading">Menyiapkan digital twin…</div>,
+  loading: () => <div className="scene-loading">Menyiapkan jaringan air…</div>,
 });
 class SceneBoundary extends Component<
   { children: ReactNode },
@@ -64,17 +65,6 @@ const components: ComponentId[] = [
   "FLOW-01",
   "NODE-01",
 ];
-const names: Record<ComponentId, string> = {
-  "TANK-01": "Reservoir utama",
-  "PUMP-01": "Pompa sentrifugal",
-  "PIPE-01": "Pipa hulu",
-  "PIPE-02": "Pipa pemantauan",
-  "PIPE-03": "Pipa hilir",
-  "VALVE-01": "Katup kontrol",
-  "PRESSURE-01": "Sensor tekanan",
-  "FLOW-01": "Sensor debit",
-  "NODE-01": "Titik konsumsi",
-};
 const fmt = (n: number) =>
   n.toLocaleString("id-ID", {
     minimumFractionDigits: 1,
@@ -86,13 +76,16 @@ function Slider({
   onChange,
   unit = "%",
   max = 100,
+  help,
 }: {
   label: string;
   value: number;
   onChange: (v: number) => void;
   unit?: string;
   max?: number;
+  help?: string;
 }) {
+  const helpId = useId();
   return (
     <label className="slider-label">
       <span>
@@ -103,6 +96,7 @@ function Slider({
       </span>
       <input
         aria-label={label}
+        aria-describedby={help ? helpId : undefined}
         type="range"
         min="0"
         max={max}
@@ -115,6 +109,11 @@ function Slider({
           {max} {unit}
         </small>
       </span>
+      {help && (
+        <span className="slider-help" id={helpId}>
+          {help}
+        </span>
+      )}
     </label>
   );
 }
@@ -146,7 +145,7 @@ export default function SimulatorShell() {
         <div className="project-name">
           <span className="divider" />
           <span>
-            Proyek 01 <small>Jaringan distribusi</small>
+            Simulasi air <small>Jaringan distribusi</small>
           </span>
         </div>
         <div className="header-end">
@@ -211,11 +210,13 @@ export default function SimulatorShell() {
             <div className="section-heading">Operasi jaringan</div>
             <Slider
               label="Atur Pompa"
+              help="Mengatur kuatnya dorongan air."
               value={s.parameters.pump}
               onChange={(pump) => s.set({ pump }, `Pompa diatur ke ${pump}%`)}
             />
             <Slider
               label="Bukaan Katup"
+              help="0% tertutup, 100% terbuka."
               value={s.parameters.valve}
               onChange={(valve) =>
                 s.set({ valve }, `Katup diatur ke ${valve}%`)
@@ -223,6 +224,7 @@ export default function SimulatorShell() {
             />
             <Slider
               label="Beban Konsumsi"
+              help="Kebutuhan air konsumen, dalam liter per menit."
               value={s.parameters.demand}
               max={180}
               unit="L/min"
@@ -238,6 +240,7 @@ export default function SimulatorShell() {
             {components.map((id) => (
               <button
                 key={id}
+                data-component-id={id}
                 className={`component-item ${s.selected === id ? "chosen" : ""}`}
                 onClick={() => {
                   s.select(id);
@@ -246,8 +249,8 @@ export default function SimulatorShell() {
               >
                 <Box size={14} />
                 <span>
-                  {id}
-                  <small>{names[id]}</small>
+                  {componentInfo[id].name}
+                  <small>{componentInfo[id].description}</small>
                 </span>
                 <i
                   className={
@@ -271,7 +274,7 @@ export default function SimulatorShell() {
         <div className="central">
           <div className="scene-toolbar">
             <div>
-              <span className="eyebrow">Proyek 01 / Model jaringan</span>
+              <span className="eyebrow">Simulasi interaktif</span>
               <h1>Jaringan distribusi air</h1>
             </div>
             <span className="environment-badge">
@@ -346,7 +349,7 @@ export default function SimulatorShell() {
               </select>
             </div>
             <span className="playback-note">
-              <i /> Langkah waktu 0,25 detik
+              <i /> Perhitungan diperbarui otomatis
             </span>
           </div>
           <Monitoring />
@@ -363,7 +366,9 @@ export default function SimulatorShell() {
               unit="bar"
               icon={<Gauge size={17} />}
               note={
-                s.parameters.sensorFault ? "Sensor terganggu" : "PRESSURE-01"
+                s.parameters.sensorFault
+                  ? "Sensor terganggu"
+                  : "Tekanan air di jaringan"
               }
             />
             <Metric
@@ -371,7 +376,7 @@ export default function SimulatorShell() {
               value={fmt(s.sample.flow)}
               unit="L/min"
               icon={<Activity size={17} />}
-              note="FLOW-01"
+              note="Air yang masuk ke jaringan"
             />
             <Metric
               label="Air terbuang"
@@ -395,8 +400,8 @@ export default function SimulatorShell() {
               <span className={`pill ${leakHere ? "warn" : ""}`}>
                 {leakHere ? "Bocor" : "Dipilih"}
               </span>
-              <h2>{s.selected}</h2>
-              <p>{names[s.selected]}</p>
+              <h2>{componentInfo[s.selected].name}</h2>
+              <p>{componentInfo[s.selected].description}</p>
             </div>
             <div className="inspector-body">
               <div className="section-heading">Informasi komponen</div>
@@ -420,6 +425,17 @@ export default function SimulatorShell() {
                   <dd>Simulasi lokal</dd>
                 </div>
               </dl>
+              <details className="technical-details">
+                <summary>Informasi teknis</summary>
+                <dl>
+                  <div>
+                    <dt>Kode komponen</dt>
+                    <dd>
+                      <code>{s.selected}</code>
+                    </dd>
+                  </div>
+                </dl>
+              </details>
               {pipe ? (
                 <>
                   <div className="section-heading separated">
@@ -435,7 +451,7 @@ export default function SimulatorShell() {
                       onClick={() =>
                         s.set(
                           { leak: !leakHere, pipe: s.selected as "PIPE-01" },
-                          `${!leakHere ? "Kebocoran diaktifkan" : "Kebocoran dinonaktifkan"} pada ${s.selected}`,
+                          `${!leakHere ? "Kebocoran diaktifkan" : "Kebocoran dinonaktifkan"} pada ${componentInfo[s.selected].name.toLowerCase()}`,
                         )
                       }
                     >
@@ -448,7 +464,7 @@ export default function SimulatorShell() {
                     onChange={(severity) =>
                       s.set(
                         { severity, pipe: s.selected as "PIPE-01" },
-                        `Tingkat kebocoran ${s.selected}: ${severity}%`,
+                        `Tingkat kebocoran ${componentInfo[s.selected].name.toLowerCase()}: ${severity}%`,
                       )
                     }
                   />
@@ -476,17 +492,15 @@ export default function SimulatorShell() {
                 />
               ) : s.selected === "TANK-01" ? (
                 <Slider
-                  label="Level Reservoir"
+                  label="Isi tangki"
                   value={s.parameters.tank}
-                  onChange={(tank) =>
-                    s.set({ tank }, `Level reservoir ${tank}%`)
-                  }
+                  onChange={(tank) => s.set({ tank }, `Isi tangki ${tank}%`)}
                 />
               ) : (
                 <p className="muted small">
                   {s.selected === "NODE-01"
                     ? `Debit tersalurkan: ${fmt(s.sample.delivered)} L/min`
-                    : `Observasi ${s.parameters.sensorFault ? "terganggu oleh bias sensor" : "mengikuti keadaan hidraulika jaringan"}.`}
+                    : `Pembacaan sensor ${s.parameters.sensorFault ? "menyimpang dari kondisi sebenarnya" : "menunjukkan kondisi jaringan air"}.`}
                 </p>
               )}
               <div className="section-heading separated">
@@ -521,7 +535,7 @@ export default function SimulatorShell() {
         <span>
           <i /> Leaksense / 0.2
         </span>
-        <span>Model hidraulika sederhana</span>
+        <span>Simulasi aliran dan tekanan air</span>
         <span>Data tidak dikirim ke server</span>
       </footer>
     </main>

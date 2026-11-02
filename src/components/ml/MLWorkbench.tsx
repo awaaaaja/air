@@ -19,12 +19,12 @@ export default function MLWorkbench() {
     <>
       <div className="ml-panel">
         <div className="section-heading">
-          Model kebocoran <span className="model-tag">ONNX</span>
+          Deteksi kebocoran <span className="model-tag">Terpasang</span>
         </div>
-        <h3>BattLeDIM / L-Town</h3>
-        <p>Model tersedia. Uji sampel atau unggah data 36 kanal sensor.</p>
+        <h3>Uji dengan data sensor</h3>
+        <p>Gunakan contoh data penelitian atau unggah pembacaan sensor Anda.</p>
         <button className="outline-button" onClick={() => setOpen(true)}>
-          Buka pengujian model <ArrowUpRight size={15} />
+          Uji deteksi kebocoran <ArrowUpRight size={15} />
         </button>
       </div>
       {open && <Workbench onClose={() => setOpen(false)} />}
@@ -172,21 +172,20 @@ function Workbench({ onClose }: { onClose: () => void }) {
             <i className={status === "Siap" ? "ready-dot" : ""} />
             {status}
           </span>
-          <span>Logistic regression</span>
-          <span>ONNX / WASM</span>
+          <span>Diproses di browser</span>
         </div>
         <p className="ml-explanation">
-          Model ini membaca 33 sensor tekanan dan 3 sensor debit. Jaringan 3D
-          saat ini belum menyediakan seluruh kanal tersebut. Pengujian di sini
-          memakai data BattLeDIM atau data yang Anda unggah, terpisah dari
+          Model ini memerlukan 33 sensor tekanan dan 3 sensor debit. Jaringan 3D
+          saat ini belum menyediakan seluruh pembacaan tersebut. Pengujian di
+          sini memakai data BattLeDIM atau data yang Anda unggah, terpisah dari
           simulasi.
         </p>
         <div className="ml-input-heading">
-          <h3>Data masukan</h3>
-          <span>12 pembacaan / 5 menit</span>
+          <h3>Data yang akan dianalisis</h3>
+          <span>12 pembacaan, selang 5 menit</span>
         </div>
         <label className="ml-select-label" htmlFor="ml-sample">
-          Sampel BattLeDIM
+          Contoh data sensor
         </label>
         <select
           id="ml-sample"
@@ -207,9 +206,9 @@ function Workbench({ onClose }: { onClose: () => void }) {
           ))}
         </select>
         <div className="ml-input-meta">
-          <span>Tekanan: m water head</span>
+          <span>Tekanan: meter kolom air</span>
           <span>Debit: m³/jam</span>
-          <span>Waktu lokal dataset</span>
+          <span>Waktu mengikuti sumber data</span>
         </div>
         <div className="ml-actions">
           <button
@@ -222,7 +221,7 @@ function Workbench({ onClose }: { onClose: () => void }) {
             ) : (
               <ArrowUpRight size={15} />
             )}
-            Jalankan inferensi
+            Analisis data
           </button>
           <button
             className="outline-button"
@@ -273,7 +272,7 @@ function Workbench({ onClose }: { onClose: () => void }) {
             aria-live="polite"
           >
             <div className="result-title">
-              <span>Hasil model</span>
+              <span>Hasil analisis</span>
               <strong>
                 {result.classId === 1 ? "Kebocoran terdeteksi" : "Normal"}
               </strong>
@@ -291,14 +290,14 @@ function Workbench({ onClose }: { onClose: () => void }) {
               </div>
               <div>
                 <dt>Sumber data</dt>
-                <dd>{imported ? fileName : "Sampel BattLeDIM"}</dd>
+                <dd>{imported ? fileName : "Contoh data sensor"}</dd>
               </div>
               <div>
                 <dt>Waktu pembacaan</dt>
                 <dd>{result.dataTimestamp}</dd>
               </div>
               <div>
-                <dt>Waktu inferensi</dt>
+                <dt>Waktu analisis</dt>
                 <dd>{result.durationMs.toFixed(1)} ms</dd>
               </div>
             </dl>
@@ -307,8 +306,8 @@ function Workbench({ onClose }: { onClose: () => void }) {
         )}
         <section className="ml-validation">
           <div>
-            <h3>Periksa hasil ekspor</h3>
-            <p>Bandingkan enam sampel dengan hasil Python.</p>
+            <h3>Periksa kesesuaian model</h3>
+            <p>Cocokkan hasil analisis dengan enam contoh acuan.</p>
           </div>
           <button
             className="outline-button"
@@ -358,9 +357,10 @@ function Workbench({ onClose }: { onClose: () => void }) {
             Unduh contoh JSON
           </a>
           <p>
-            Kelas model: NORMAL dan LEAK. Gangguan sensor, konsumsi, dan pompa
-            tidak termasuk kelas model. Evaluasi masih eksploratif; performanya
-            belum membuktikan akurasi pada jaringan lain.
+            Model membedakan kondisi normal dan kebocoran. Gangguan sensor,
+            konsumsi, dan pompa tidak termasuk kelas model. Evaluasi masih
+            eksploratif; performanya belum membuktikan akurasi pada jaringan
+            lain.
           </p>
         </details>
       </div>

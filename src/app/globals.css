@@ -1798,3 +1798,498 @@ select {
     gap: 8px;
   }
 }
+
+/* Readable typography and plain-language component labels. */
+body {
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+button,
+input,
+select {
+  font-family: inherit;
+}
+.clock,
+.inspector-heading h2,
+.scene-label {
+  font-family: inherit;
+}
+.app-header {
+  height: 68px;
+}
+.brand {
+  font-size: 19px;
+  letter-spacing: -0.6px;
+}
+.project-name {
+  font-size: 13px;
+}
+.project-name small {
+  font-size: 12px;
+}
+.status {
+  font-size: 12px;
+}
+.clock {
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+.clock small {
+  font-size: 11px;
+}
+.workspace {
+  grid-template-columns: 236px minmax(0, 1fr) 302px;
+  height: calc(100dvh - 128px);
+  min-height: 800px;
+}
+.sidebar-title {
+  font-size: 13px;
+  min-height: 47px;
+}
+.sidebar section {
+  padding: 18px;
+}
+.section-heading {
+  font-size: 13px;
+  font-weight: 550;
+}
+.eyebrow {
+  font-size: 12px;
+}
+.sidebar select,
+select {
+  font-size: 13px;
+  padding: 10px;
+}
+.small,
+.truth-label {
+  font-size: 11px;
+  line-height: 1.65;
+  color: #a4a49d;
+}
+.slider-label > span:first-child {
+  font-size: 12px;
+  color: #c7c7c0;
+}
+.slider-label strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+.slider-label strong small {
+  font-size: 11px;
+}
+.range-ends {
+  font-size: 10px;
+  color: #92928a;
+}
+.component-item {
+  font-size: 13px;
+  padding: 10px 9px;
+  line-height: 1.35;
+}
+.component-item small {
+  font-size: 10px;
+  margin-top: 4px;
+  color: #a1a199;
+  line-height: 1.4;
+}
+.component-item.chosen small {
+  color: #c8b59d;
+}
+.sidebar-footer {
+  font-size: 11px;
+  line-height: 1.5;
+}
+.sidebar-footer small {
+  font-size: 10px;
+  color: #94948c;
+}
+.scene-toolbar .eyebrow {
+  font-size: 12px;
+  margin-bottom: 9px;
+}
+.scene-toolbar h1 {
+  font-size: 30px;
+  max-width: 330px;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+.scene-label {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 9px;
+}
+.hint {
+  font-size: 12px;
+}
+.scene-legend,
+.orbit-hint {
+  font-size: 10px;
+  color: #9f9f96;
+}
+.primary-button {
+  font-size: 13px;
+  padding: 10px 15px;
+  font-weight: 550;
+}
+.playback-speed {
+  font-size: 12px;
+}
+.playback-speed select {
+  font-size: 12px;
+}
+.playback-note {
+  font-size: 10px;
+  color: #999990;
+}
+.monitoring-tabs {
+  height: 44px;
+  gap: 20px;
+}
+.monitoring-tabs > button {
+  font-size: 12px;
+}
+.chart-caption {
+  font-size: 10px;
+}
+.events > div {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.metric-label {
+  font-size: 12px;
+}
+.metric-value {
+  font-size: 26px;
+}
+.metric-value > span {
+  font-size: 12px;
+}
+.metric-note {
+  font-size: 10px;
+  line-height: 1.4;
+}
+.pressure-metric .metric-note {
+  bottom: 8px;
+}
+.pressure-metric .metric-value {
+  font-size: 30px;
+}
+.inspector-heading {
+  padding: 20px 18px;
+}
+.inspector-heading h2 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  padding-right: 52px;
+  line-height: 1.3;
+}
+.inspector-heading p {
+  font-size: 12px;
+  line-height: 1.6;
+  max-width: 240px;
+  color: #ababa2;
+}
+.pill {
+  font-size: 10px;
+  top: 22px;
+}
+.inspector-body dl > div {
+  font-size: 12px;
+}
+.inspector-body dt {
+  color: #a2a29a;
+}
+.inspector-body dd {
+  color: #d2d2c9;
+}
+.switch-row {
+  font-size: 12px;
+}
+.inspector-callout {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #a5a59b;
+}
+.sensor-reading {
+  padding: 12px 0;
+}
+.sensor-reading > span {
+  font-size: 12px;
+}
+.sensor-reading strong {
+  font-size: 17px;
+}
+.sensor-reading small {
+  font-size: 10px;
+}
+.outline-button {
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 10px 9px;
+}
+.technical-details {
+  border-top: 1px solid #45453e;
+  margin-top: 16px;
+  padding-top: 13px;
+}
+.technical-details summary {
+  font-size: 11px;
+  color: #aaaa9f;
+  cursor: pointer;
+}
+.technical-details code {
+  font-size: 11px;
+  font-family: monospace;
+  color: #c1b9ab;
+}
+.ml-panel .section-heading {
+  font-size: 13px;
+  gap: 10px;
+}
+.model-tag {
+  font-size: 9px !important;
+  white-space: nowrap;
+}
+.ml-panel h3 {
+  font-size: 15px;
+}
+.ml-panel p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #aaaa9f;
+}
+.ml-panel .outline-button {
+  font-size: 12px;
+}
+.ml-dialog {
+  width: min(710px, calc(100vw - 28px));
+}
+.ml-dialog-header h2 {
+  font-size: 25px;
+}
+.ml-dialog-header .eyebrow {
+  font-size: 12px;
+}
+.model-summary {
+  font-size: 12px;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.ml-explanation {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #b3b3a8;
+}
+.ml-input-heading h3,
+.ml-validation h3 {
+  font-size: 14px;
+}
+.ml-input-heading > span {
+  font-size: 11px;
+}
+.ml-select-label {
+  font-size: 12px;
+}
+.ml-dialog select {
+  font-size: 13px;
+}
+.ml-input-meta {
+  font-size: 11px;
+  line-height: 1.6;
+  flex-wrap: wrap;
+}
+.inference-result dt,
+.inference-result dd {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.result-title {
+  font-size: 12px;
+}
+.result-title strong {
+  font-size: 18px;
+}
+.inference-result p {
+  font-size: 11px;
+  line-height: 1.7;
+}
+.ml-validation p {
+  font-size: 12px;
+}
+.parity-results {
+  font-size: 12px;
+}
+.parity-results > div {
+  font-size: 11px;
+}
+.ml-contract {
+  font-size: 12px;
+  line-height: 1.8;
+}
+.ml-contract summary {
+  font-size: 12px;
+}
+.app-footer {
+  font-size: 10px;
+  height: 26px;
+}
+@media (min-width: 1550px) {
+  .workspace {
+    grid-template-columns: 246px minmax(0, 1fr) 320px;
+  }
+}
+@media (max-width: 1150px) {
+  .workspace {
+    grid-template-columns: 216px minmax(0, 1fr) 280px;
+  }
+  .scene-toolbar h1 {
+    font-size: 26px;
+    max-width: 290px;
+  }
+  .component-item {
+    font-size: 12px;
+  }
+  .sidebar section {
+    padding: 16px;
+  }
+  .inspector-body,
+  .ml-panel {
+    padding: 17px;
+  }
+  .monitoring-tabs {
+    gap: 14px;
+  }
+  .monitoring-tabs > button {
+    font-size: 11px;
+  }
+}
+@media (max-width: 950px) {
+  .workspace {
+    grid-template-columns: minmax(0, 1fr) 280px;
+  }
+  .sidebar {
+    display: none;
+  }
+  .sidebar.is-open {
+    display: flex;
+    position: fixed;
+    width: 265px;
+    top: 80px;
+    bottom: 12px;
+    left: 12px;
+    z-index: 60;
+    overflow: auto;
+    background: #2c2c29;
+  }
+  .mobile-menu {
+    display: grid;
+  }
+  .sidebar-title .mobile-menu {
+    margin-left: auto;
+  }
+  .project-name {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .app-header {
+    height: 64px;
+  }
+  .brand {
+    font-size: 18px;
+  }
+  .workspace {
+    display: flex;
+    height: auto;
+    min-height: 0;
+  }
+  .sidebar.is-open {
+    top: 64px;
+    bottom: 0;
+    left: 0;
+  }
+  .scene-toolbar {
+    padding: 22px 16px;
+  }
+  .scene-toolbar h1 {
+    font-size: 27px;
+    max-width: 300px;
+  }
+  .scene-wrap {
+    height: 490px;
+    min-height: 490px;
+  }
+  .scene-label.selected {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+  .hint {
+    font-size: 11px;
+    max-width: calc(100% - 28px);
+  }
+  .playback {
+    gap: 12px;
+  }
+  .primary-button {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+  .playback-speed {
+    font-size: 11px;
+  }
+  .monitoring-tabs {
+    gap: 16px;
+    padding: 0 13px;
+  }
+  .monitoring-tabs > button {
+    font-size: 10px;
+  }
+  .inspector-heading h2 {
+    font-size: 23px;
+  }
+  .inspector-body {
+    padding: 20px 18px;
+  }
+  .metric-value {
+    font-size: 27px;
+  }
+  .metric-note {
+    font-size: 10px;
+  }
+  .ml-dialog {
+    width: calc(100vw - 20px);
+  }
+  .ml-actions {
+    flex-wrap: wrap;
+  }
+  .ml-input-heading {
+    gap: 10px;
+  }
+  .ml-input-heading > span {
+    text-align: right;
+  }
+  .inference-result dl > div {
+    font-size: 11px;
+  }
+  .ml-validation {
+    align-items: flex-start;
+  }
+  .app-footer {
+    font-size: 8px;
+  }
+}
+.slider-help {
+  display: block;
+  font-size: 11px;
+  color: #a2a298;
+  line-height: 1.6;
+  margin-top: 9px;
+  font-weight: 400;
+}
+.technical-details summary:focus-visible {
+  outline: 2px solid #e4a15f;
+  outline-offset: 4px;
+}

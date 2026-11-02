@@ -9,12 +9,12 @@ test("full simulator workflow", async ({ page }) => {
   await expect(page.locator('canvas[data-ready="true"]')).toBeVisible();
   await expect(page.locator(".scene-label")).toHaveCount(4);
   await expect(
-    page.getByRole("button", { name: "Buka pengujian model", exact: true }),
+    page.getByRole("button", { name: "Uji deteksi kebocoran", exact: true }),
   ).toBeVisible();
   await page.screenshot({ path: "test-results/desktop.png", fullPage: true });
-  await page.locator(".component-item").filter({ hasText: "PIPE-02" }).click();
+  await page.locator('[data-component-id="PIPE-02"]').click();
   await expect(
-    page.getByRole("heading", { name: "PIPE-02", exact: true }),
+    page.getByRole("heading", { name: "Pipa utama", exact: true }),
   ).toBeVisible();
   await page
     .getByRole("button", { name: "Fokus komponen", exact: true })
@@ -44,7 +44,7 @@ test("full simulator workflow", async ({ page }) => {
     .getByRole("button", { name: "Riwayat Kejadian", exact: true })
     .click();
   await expect(page.locator(".events")).toContainText(
-    "Kebocoran diaktifkan pada PIPE-02",
+    "Kebocoran diaktifkan pada pipa utama",
   );
   await expect(page.locator(".events")).toContainText("85%");
   await page.screenshot({ path: "test-results/leak.png", fullPage: true });
@@ -75,9 +75,9 @@ test("mobile controls without overflow", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("canvas")).toBeVisible();
   await page.getByRole("button", { name: "Buka kontrol" }).click();
-  await page.locator(".component-item").filter({ hasText: "VALVE-01" }).click();
+  await page.locator('[data-component-id="VALVE-01"]').click();
   await expect(
-    page.getByRole("heading", { name: "VALVE-01", exact: true }),
+    page.getByRole("heading", { name: "Katup pengatur", exact: true }),
   ).toBeVisible();
   await page.getByRole("slider", { name: "Posisi Katup" }).fill("30");
   expect(
@@ -124,6 +124,34 @@ test("all scenario presets alter the model and assets are served", async ({
   await scenario.selectOption("sensor");
   await expect(page.locator(".metric-note").first()).toContainText("terganggu");
   await expect(
-    page.getByRole("button", { name: "Buka pengujian model", exact: true }),
+    page.getByRole("button", { name: "Uji deteksi kebocoran", exact: true }),
+  ).toBeVisible();
+});
+
+test("readable typography and plain component names with optional technical details", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.evaluate(() => document.fonts.ready);
+  await expect(page.locator(".scene-label.selected")).toHaveText("Pipa utama");
+  await expect(page.locator('[data-component-id="PUMP-01"]')).toContainText(
+    "Pompa air",
+  );
+  await expect(
+    page.getByRole("heading", { name: "Pipa utama", exact: true }),
+  ).toBeVisible();
+  const font = await page
+    .locator("body")
+    .evaluate((el) => getComputedStyle(el).fontFamily);
+  expect(font).toMatch(/geist/i);
+  await expect(page.locator(".technical-details code")).toBeHidden();
+  await page.getByText("Informasi teknis", { exact: true }).click();
+  await expect(page.locator(".technical-details code")).toHaveText("PIPE-02");
+  await page.locator('[data-component-id="TANK-01"]').click();
+  await expect(
+    page.getByRole("heading", { name: "Tangki utama", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("slider", { name: "Isi tangki", exact: true }),
   ).toBeVisible();
 });

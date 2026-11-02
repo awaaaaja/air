@@ -55,12 +55,12 @@ export const scenarios: Record<
   },
   small: {
     label: "Kebocoran Kecil",
-    description: "Kebocoran 25% pada PIPE-02",
+    description: "Kebocoran 25% pada pipa utama",
     parameters: { leak: true, severity: 25 },
   },
   major: {
     label: "Kebocoran Besar",
-    description: "Kebocoran 85% pada PIPE-02",
+    description: "Kebocoran 85% pada pipa utama",
     parameters: { leak: true, severity: 85 },
   },
   demand: {
@@ -70,12 +70,13 @@ export const scenarios: Record<
   },
   pump: {
     label: "Gangguan Pompa",
-    description: "Head pompa turun menjadi 45% dari kurva normal",
+    description: "Dorongan pompa berkurang menjadi 45% dari kondisi normal",
     parameters: { pumpFault: true },
   },
   sensor: {
     label: "Gangguan Sensor",
-    description: "Bias tekanan +0,8 bar; debit terbaca 65%",
+    description:
+      "Sensor membaca tekanan 0,8 bar lebih tinggi dan debit 35% lebih rendah",
     parameters: { sensorFault: true },
   },
 };

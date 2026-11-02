@@ -21,3 +21,7 @@ Referensi pendukung yang dibaca sebelum screenshot tersedia:
 Tidak ada gambar, kode berlisensi atau aset industri dari Dribbble yang disalin. Model tangki, pompa dan pipa tetap memakai tiga GLB milik proyek. Karena aset dan fungsi berbeda, implementasi mengambil komposisi dan bahasa visual referensi, bukan mengaku sebagai salinan pixel-perfect.
 
 Rumus hidraulika, fixed-step timer, kontrol, skenario dan batas riwayat tidak diubah. Perubahan engine/store hanya merapikan teks deskripsi.
+
+## Tipografi dan istilah
+
+Geist Sans variabel menggantikan Arial dan disajikan lokal dari package berlisensi SIL OFL. Teks kontrol diperbesar, angka memakai tabular numerals, dan monospace hanya dipakai untuk kode teknis opsional. Nama seperti PIPE-02 tidak menjadi judul utama lagi: daftar, scene, inspektor dan log memakai nama sehari-hari dari satu registry bersama. Istilah teknis yang masih diperlukan untuk impor data berada dalam detail tambahan. Penjelasan slider menunjukkan fungsi kontrol dan satuannya.

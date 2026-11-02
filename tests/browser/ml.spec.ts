@@ -6,25 +6,25 @@ test("real ONNX WASM matches all six exported Python samples", async ({
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
   await page
-    .getByRole("button", { name: "Buka pengujian model", exact: true })
+    .getByRole("button", { name: "Uji deteksi kebocoran", exact: true })
     .click();
   const dialog = page.getByRole("dialog");
   await expect(dialog.getByText("Siap", { exact: true })).toBeVisible({
     timeout: 45000,
   });
   await dialog
-    .getByRole("button", { name: "Jalankan inferensi", exact: true })
+    .getByRole("button", { name: "Analisis data", exact: true })
     .click();
   await expect(
     dialog.getByRole("region", { name: "Hasil inferensi" }),
   ).toContainText("Normal");
   await expect(dialog.getByTestId("probability-leak")).toHaveText("23.452%");
-  await dialog.getByLabel("Sampel BattLeDIM").selectOption("3");
+  await dialog.getByLabel("Contoh data sensor").selectOption("3");
   await expect(
     dialog.getByRole("region", { name: "Hasil inferensi" }),
   ).toHaveCount(0);
   await dialog
-    .getByRole("button", { name: "Jalankan inferensi", exact: true })
+    .getByRole("button", { name: "Analisis data", exact: true })
     .click();
   await expect(
     dialog.getByRole("region", { name: "Hasil inferensi" }),
@@ -41,18 +41,16 @@ test("real ONNX WASM matches all six exported Python samples", async ({
     fullPage: true,
   });
   const validInput = await page.request.get("/ml/example_sensor_window.json");
-  await dialog
-    .getByLabel("Unggah data sensor JSON")
-    .setInputFiles({
-      name: "sensor-window.json",
-      mimeType: "application/json",
-      buffer: await validInput.body(),
-    });
+  await dialog.getByLabel("Unggah data sensor JSON").setInputFiles({
+    name: "sensor-window.json",
+    mimeType: "application/json",
+    buffer: await validInput.body(),
+  });
   await expect(
     dialog.getByRole("region", { name: "Hasil inferensi" }),
   ).toHaveCount(0);
   await dialog
-    .getByRole("button", { name: "Jalankan inferensi", exact: true })
+    .getByRole("button", { name: "Analisis data", exact: true })
     .click();
   await expect(dialog.getByTestId("probability-leak")).toHaveText("23.452%");
   await expect(
@@ -78,7 +76,7 @@ test("missing model reports error without affecting simulation", async ({
   );
   await page.goto("/");
   await page
-    .getByRole("button", { name: "Buka pengujian model", exact: true })
+    .getByRole("button", { name: "Uji deteksi kebocoran", exact: true })
     .click();
   await expect(page.getByRole("dialog").getByRole("alert")).toContainText(
     "Model tidak tersedia",

@@ -8,7 +8,7 @@ Current application: Industrial IoT visual redesign and the supplied BattLeDIM O
 - `npm run lint`: passed with no errors or warnings. Generated vendor runtime files are excluded.
 - `npm test`: 20 tests passed in two suites. All nine hydraulic tests remain intact. Eleven ML tests validate the real export schema, all six 254-feature reference vectors, wall-clock timestamp handling, units, cadence, feature order, nonfinite inputs and bounded causal forward-fill.
 - `npm run build`: production build passed. Next reports the page as statically prerendered with 268 kB first-load JavaScript; the WebGL scene and ONNX execution runtime load separately.
-- `npm run test:e2e`: five production-browser tests cover the simulator workflow, mobile interaction, all six scenarios/assets, real ONNX inference and missing-model recovery. The model test runs all six reference samples in actual browser WASM, compares classes and probabilities against exported Python results, tests a valid sensor-window upload and rejects invalid units.
+- `npm run test:e2e`: six production-browser tests cover the simulator workflow, mobile interaction, all six scenarios/assets, real ONNX inference and missing-model recovery. The model test runs all six reference samples in actual browser WASM, compares classes and probabilities against exported Python results, tests a valid sensor-window upload and rejects invalid units.
 - `git diff --check`: passed.
 - Model SHA-256 matches the supplied metadata: `916c441f9cb5651e6693039ad2657ccf17e9b0f8da168f133d7003c3538f76d9`.
 
@@ -44,3 +44,11 @@ A first error-handling browser test used an unscoped alert locator that also mat
 ## Reusable environment
 
 The saved startup instructions now describe the installed ONNX model and its input requirements. Temporary Dribbble domain additions were removed from the draft after the user supplied the screenshot; the original package-manager network preset remains. No broader access is required for normal app use or local inference. Draft saving does not publish an environment snapshot.
+
+## Typography and terminology update
+
+Geist Sans 1.9.0 is served locally through Next.js. Control labels, explanatory text and values have larger, consistent type sizes. The visible component names are Tangki utama, Pompa air, Pipa masuk, Pipa utama, Pipa keluaran, Katup pengatur, Sensor tekanan, Sensor debit and Konsumen. Internal IDs remain unchanged and are shown only under the optional Informasi teknis details. Event descriptions, scenario descriptions and scene labels use these same friendly names. ML actions now say Analisis data and Uji deteksi kebocoran.
+
+Verification rerun: 20 unit tests passed; six Chromium tests passed in 19.3 seconds; strict type checking, lint and the production build passed. The added browser check verifies Geist is the computed body font, friendly names appear in the scene/sidebar/inspector, internal codes are hidden initially, and technical details can be opened. No hydraulic equations or ONNX feature mathematics were changed. Screenshot documentation is captured from the local production build, not the externally supplied Vercel URL.
+
+A separate documentation capture ran the production app through 16 usage steps after the typography update: network overview, selection/focus, normal operation, small/major leaks, flow chart, closed valve, pump adjustment, sensor fault, event log/pause, reset, normal/leak model samples, six-sample parity, JSON upload and mobile controls. The capture reported zero browser page errors. A 17-page PDF (cover plus 16 steps) and the original PNG files were generated as delivery artifacts outside the repository.
